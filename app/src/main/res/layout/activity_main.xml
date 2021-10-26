@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edt_key"
+        android:hint="Chave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/edt_value"
+        android:hint="Valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar" />
+
+    <Button
+        android:id="@+id/btn_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ler dado" />
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:id="@+id/tv_value"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/btn_clean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Limpar item" />
+
+    <Button
+        android:id="@+id/btn_clean_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Limpar todos os itens" />
+
+
+</LinearLayout>
