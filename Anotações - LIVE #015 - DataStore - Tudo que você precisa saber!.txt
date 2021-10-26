@@ -1,0 +1,74 @@
+LIVE #015 - DataStore: Para que serve, como usar e tudo o que você precisa saber sobre DataStore!
+
+ - DataStore:
+
+ O Jetpack DataStore é uma solução de armazenamento de dados que permite armazenar pares de chave-valor ou objetos tipados com buffers de protocolo.
+
+ Vem como substituto do depreciado SharedPreferences, que fazia a mesma coisa, mas de forma menos segura e performática.
+
+ O DataStore usa Corroutines e Kotlin Flow para armazenar dados de forma assíncrona, consistente e transacional.
+
+  - ATENÇÃO:
+
+Se você precisa oferecer compatibilidade com conjuntos de dados grandes ou complexos, atualizações parciais ou integridade referencial, use Room Database em vez de DataStore.
+
+O DataStore é ideal para conjuntos de dados pequenos e simples e não é compatível com atualizações parciais ou integridade referencial.
+
+O DataStore é separado em duas "categorias". 
+
+	- Preferences DataStore.
+	- Proto DataStore. (Esse é o utilizado para salvar objetos tipados com buffers de protocolo. Não veremos na aula de hoje.)
+
+Ambos são para armazenamento de dados, mas cada um faz isso de uma forma diferente.
+
+ - Preferences DataStore
+
+Armazena dados no formato CHAVE VALOR. O que é um dado "CHAVE VALOR"?
+
++----------------+-------------------+
+|     Chave      |       Valor       |
++----------------+-------------------+
+| IDENTIFICADOR  | VALOR A SER SALVO |
++----------------+-------------------+
+
+É recomendado para salvar dados simples e preferências (configurações) da sua app que são selecionadas e alteradas pelo usuário durante o uso do app.
+
+Exemplos:
+
++-----------------+--------------------------------------+
+|      Chave      |                Valor                 |
++-----------------+--------------------------------------+
+| FONT_SIZE       | MEDIUM                               |
+| UPDATE_INTERVAL | 600.000                              |
+| API_TOKEN       | 2a07fd0f-0773-44fd-ae65-f544f9adda9a |
++-----------------+--------------------------------------+
+
+O armazenamento de dados nessa forma, é feito pelo Preferences DataStore
+
+Mão na massa:
+
+1 - Adicionar as dependências do projeto.
+
+	// Preferences DataStore
+	implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+	//LifeCycle Scope
+	implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+
+2 - Ativar viewBinding
+
+	viewBinding {
+	    enabled true
+	}
+
+3 - Layout da tela (Link na descrição)
+
+4 - Criar o objeto do DataStore.
+
+5 - Salvar dados no DataStore Preferences
+
+6 - Ler dados no DataStore Preferences
+
+7 - Limpar dado único no DataStore Preferences.
+
+8 - Limpar TODOS os dados no DataStore Preferences
